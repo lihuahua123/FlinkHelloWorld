@@ -34,6 +34,7 @@ public class FraudDetectionJob {
 
 		DataStream<Transaction> transactions = env
 			.addSource(new TransactionSource())
+			.addSource(new TransactionSource())
 			.name("transactions");
 
 		DataStream<Alert> alerts = transactions
